@@ -20,3 +20,35 @@ Run the web app.
 ~~~
 mvn spring-boot:run
 ~~~
+
+Access web browser.
+
+~~~
+http://localhost:8080/
+~~~
+
+Set environment variable to change the display.
+
+~~~
+export APP_VERSION=v2
+~~~
+
+Run the web app again.
+
+~~~
+mvn spring-boot:run
+~~~
+
+Access web browser again.
+
+~~~
+http://localhost:8080/
+~~~
+
+## Unit Test
+
+Unit test by JUnit.
+
+~~~
+mvn test
+~~~
