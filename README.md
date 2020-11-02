@@ -3,8 +3,9 @@ The sample web application of spring boot.
 The display changes according to the environment variable.
 
 ## Prerequisites
-java 11
-maven 3.6.3
+
+- java 11
+- maven 3.6.3
 
 ## Quick Start
 
