@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Spring Boot Web</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <!-- 画面幅に応じて縮尺を変更する設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSSファイルの外部リンク -->
+    <!-- ThymeleafではCSSファイルはstatic/cssに配置する -->
+        <link rel="stylesheet" href="css/style.css">
+        <style type="text/css"></style>
+</head>
+<body>
+	<!-- ヘッダー定義 -->
+	<header>
+		<figure>
+			<img src="images/spring-boot.png" alt="" width="100%" height="100%">
+		</figure>
+	</header>
+
+	<!-- targetの内容に応じて表示内容を切り替える -->
+	<div th:switch="${target}">
+    	<h1 th:case="v1" class="box_blue" th:text="'Spring Boot App ' + ${target}"></h1>
+    	<h1 th:case="v2" class="box_red" th:text="'Spring Boot App ' + ${target}"></h1>
+    	<h1 th:case="*" class="box_def" th:text="'Spring Boot App ' + ${target}"></h1>
+	</div>
+</body>
+</html>
