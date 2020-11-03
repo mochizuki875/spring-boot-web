@@ -42,6 +42,14 @@ header figure img {
     text-align: center; /* 文字センター */
 }
 
+.box_green {
+    padding: 50px;
+    margin: 50px;
+    color: #2c2c2f;
+    background: #7fffd4;/*背景色*/
+    text-align: center; /* 文字センター */
+}
+
 .box_def {
     padding: 50px;
     margin: 50px;

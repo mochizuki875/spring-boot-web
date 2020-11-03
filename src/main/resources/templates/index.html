@@ -22,6 +22,7 @@
 	<div th:switch="${target}">
     	<h1 th:case="v1" class="box_blue" th:text="'Spring Boot App ' + ${target}"></h1>
     	<h1 th:case="v2" class="box_red" th:text="'Spring Boot App ' + ${target}"></h1>
+    	<h1 th:case="v3" class="box_green" th:text="'Spring Boot App ' + ${target}"></h1>
     	<h1 th:case="*" class="box_def" th:text="'Spring Boot App ' + ${target}"></h1>
 	</div>
 </body>
