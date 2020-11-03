@@ -1,5 +1,5 @@
 # Spring Boot Web
-The sample web application of spring boot.
+The sample web application of spring boot.  
 The display changes according to the environment variable.
 
 ## Prerequisites
@@ -51,4 +51,13 @@ Unit test by JUnit.
 
 ~~~
 mvn test
+~~~
+
+## Docker build & run
+
+Build docker image and run as container.
+
+~~~
+docker build -t spting-boot-web .
+docker run -p 8080:8080 -e APP_VERSION=v2 spting-boot-web
 ~~~
