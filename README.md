@@ -58,6 +58,6 @@ mvn test
 Build docker image and run as container.
 
 ~~~
-docker build -t spting-boot-web .
-docker run -p 8080:8080 -e APP_VERSION=v2 spting-boot-web
+docker build -t spring-boot-web .
+docker run -p 8080:8080 -e APP_VERSION=v2 spring-boot-web
 ~~~
