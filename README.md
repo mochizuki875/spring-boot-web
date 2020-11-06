@@ -45,6 +45,14 @@ Access web browser again.
 http://localhost:8080/
 ~~~
 
+## Build 
+
+Build the project by maven.
+
+~~~
+mvn install
+~~~
+
 ## Unit Test
 
 Unit test by JUnit.
