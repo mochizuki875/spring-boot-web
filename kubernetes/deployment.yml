@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-boot-web
+  name: spring-boot-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-web
+  template:
+    metadata:
+      labels:
+        app: spring-boot-web
+    spec:
+      containers:
+      - image: keitamochizuki/spring-boot-web
+        name: spring-boot-web
+        env:
+        - name: APP_VERSION
+          value: v1
+
