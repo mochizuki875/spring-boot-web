@@ -2,6 +2,7 @@
 The sample web application of spring boot.  
 The display changes according to the environment variable.
 
+
 ## Prerequisites
 
 - java 11
