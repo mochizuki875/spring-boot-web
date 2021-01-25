@@ -1,0 +1,32 @@
+kind: "DeploymentConfig"
+apiVersion: "v1"
+metadata:
+  name: "spring-boot-web"
+spec:
+  template: 
+    metadata:
+      labels:
+        name: "spring-boot-web"
+    spec:
+      containers:
+        - name: "spring-boot-web"
+          image: "keitamochizuki/spring-boot-web"
+          ports:
+            - containerPort: 8080
+              protocol: "TCP"
+  replicas: 2
+  # triggers:
+  #   - type: "ConfigChange" 
+  #   - type: "ImageChange" 
+  #     imageChangeParams:
+  #       automatic: true
+  #       containerNames:
+  #         - "helloworld"
+  #       from:
+  #         kind: "ImageStreamTag"
+  #         name: "origin-ruby-sample:latest"
+  strategy: 
+    type: "Rolling"
+  paused: false 
+  revisionHistoryLimit: 2 
+  minReadySeconds: 0 

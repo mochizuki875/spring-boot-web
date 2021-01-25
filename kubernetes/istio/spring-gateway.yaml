@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: spring-gateway
+spec:
+  selector:
+    istio: ingressgateway # Gatewayリソースを適用するPodのラベルを指定
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts: # 全てのリクエストを受け付ける（VirtualServiceのhostと対応）
+    - "*"
+

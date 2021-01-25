@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: spring-boot-web-internal
+spec:
+  hosts: # リクエスト先のホスト名を指定（IP,FQDN,service）
+  - "spring-boot-web" # ここに対するリクエストにルーティングのルールが適用される
+  http:
+  - route: # URIパターンに一致した時のルーティング
+    - destination: # 転送先にk8sサービスおよびdestinationruleで設定したsubsetを指定
+        host: spring-boot-web 
+        subset: v1
+      weight: 50
+    - destination: # 転送先にk8sサービスおよびdestinationruleで設定したsubsetを指定
+        host: spring-boot-web 
+        subset: v2
+      weight: 50

@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: spring-boot-web
+spec:
+  hosts: # リクエスト先のホスト名を指定（IP,FQDN,service）
+  - "*" # 全てのリクエストに対してルーティングを適用
+  gateways: # Gatewayとバインド(外部からのトラフィックに対して適用する場合)
+  - spring-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route: # URIパターンに一致した時のルーティング
+    - destination: # 転送先にk8sサービスおよびdestinationruleで設定したsubsetを指定
+        host: spring-boot-web 
+        subset: v1
+      weight: 80
+    - destination: # 転送先にk8sサービスおよびdestinationruleで設定したsubsetを指定
+        host: spring-boot-web 
+        subset: v2
+      weight: 20
