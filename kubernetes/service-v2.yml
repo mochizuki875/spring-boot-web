@@ -3,11 +3,13 @@ kind: Service
 metadata:
   labels:
     app: spring-boot-web
-  name: spring-boot-web
+    version: v2
+  name: spring-boot-web-v2
 spec:
   selector:
-    app: spring-boot-web
+    version: v2
   ports:
   - protocol: TCP
+    name: http
     port: 8080
     targetPort: 8080
