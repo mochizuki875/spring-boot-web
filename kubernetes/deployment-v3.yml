@@ -17,7 +17,7 @@ spec:
         version: v3
     spec:
       containers:
-      - image: keitamochizuki/spring-boot-web
+      - image: ghcr.io/mochizuki875/spring-boot-web:latest
         name: spring-boot-web
         env:
         - name: APP_VERSION
